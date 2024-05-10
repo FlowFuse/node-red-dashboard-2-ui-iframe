@@ -6,14 +6,14 @@ import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 // Set to this to the name of this collection of components
 // This must match node-red-dashboard-2.widgets[libraryName] in package.json
-const LIBRARY_NAME = 'ui-example'
+const LIBRARY_NAME = 'ui-iframe'
 
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [vue(), cssInjectedByJsPlugin()],
     build: {
         // Generate a source map in dev mode
-        sourcemap: process.env.NODE_ENV === 'development'
+        sourcemap: process.env.NODE_ENV === 'development',
 
         // Configure build as a UMD library
         lib: {

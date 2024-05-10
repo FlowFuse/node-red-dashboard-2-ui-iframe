@@ -1,0 +1,8 @@
+{
+    "ui-iframe" : {
+        "label": {
+            "size": "Size",
+            "src": "URL"
+        }
+    }
+}

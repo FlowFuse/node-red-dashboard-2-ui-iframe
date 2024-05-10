@@ -5,6 +5,6 @@
  */
 import { createApp } from 'vue'
 
-import UIExample from './components/UIExample.vue'
+import UIIframe from './components/UIIframe.vue'
 
-createApp(UIExample).mount('#app')
+createApp(UIIframe).mount('#app')

@@ -1,11 +1,14 @@
-# Example Node for Node-RED Dashboard
+# Dashboard 2.0 Node: `ui-frame`
 
-This repository contains an example, third-party, node for the Node-RED Dashboard. You can read our [contribution guide](https://dashboard.flowfuse.com/contributing/widgets/third-party.html) for details on developing your own Dashboard 2.0 integrations & widgets.
+This node allows you to embed an external webpage into your Dashboard 2.0 applications using an iframe. This can be useful for displaying content from other services or websites.
 
-This project is intended to be used as a starting point for creating your own custom nodes that can integrate directly with [Node-RED Dashboard 2.0](https://github.com/FlowFuse/flowforge-nr-dashboard).
+## Configuration
 
-Note that if you're looking to contribute directly to Node-RED Dashboard 2.0, then use the examples already in the core repository to build on, as they are structured differently to external/third-party widgets.
+### Properties
 
-## Architecture
+- **size**: Width and height of the iframe in the context of the Dashboard layout. It's recommended _not_ to use _"auto"_ sizing.
+- **src**: The URL of the webpage you want to embed in the iframe.
 
-All third-party (non-core) nodes for Node-RED Dashboard 2.0 are structured such that they extend the core `ui-template` node, and provide access such that you can define custom HTML, CSS, and JavaScript for your widget.
+### Dynamic Configuration
+
+You can override the `src` value defined in Node-RED by passing a `msg.src` value to the iframe. This can be useful for dynamically changing the content of the iframe based on user input or other events.

@@ -1,14 +1,14 @@
 <script type="text/javascript">
-    RED.nodes.registerType('ui-example', {
+    RED.nodes.registerType('ui-iframe', {
         category: RED._('@flowfuse/node-red-dashboard/ui-base:ui-base.label.category'),
-        color: RED._('@flowfuse/node-red-dashboard/ui-base:ui-base.colors.light'),
+        color: RED._('@flowfuse/node-red-dashboard/ui-base:ui-base.colors.dark'),
         defaults: {
             name: { value: "" },
             group: { type: 'ui-group', required: true },
             order: { value: 0 },
-            example: { value: "" },
+            src: { value: "", required: true },
             width: {
-                value: 0,
+                value: 6,
                 validate: function (v) {
                     const width = v || 0
                     const currentGroup = $('#node-input-group').val() || this.group
@@ -18,13 +18,14 @@
                     return valid
                 }
             },
-            height: { value: 0 }
+            height: { value: 8 }
         },
         inputs: 1,
-        outputs: 1,
-        icon: "file.svg",
+        outputs: 0,
+        icon: "iframe-icon.svg",
+        paletteLabel: 'iframe',
         label: function() {
-            return this.name || "ui-example";
+            return this.name || "iframe";
         },
         oneditprepare: function () {
             $('#node-input-size').elementSizer({
@@ -36,7 +37,7 @@
     });
 </script>
 
-<script type="text/html" data-template-name="ui-example">
+<script type="text/html" data-template-name="ui-iframe">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -46,13 +47,13 @@
         <input type="text" id="node-input-group">
     </div>
     <div class="form-row">
-        <label><i class="fa fa-object-group"></i> <span data-i18n="ui-example.label.size"></label>
+        <label><i class="fa fa-object-group"></i> <span data-i18n="ui-iframe.label.size"></label>
         <input type="hidden" id="node-input-width">
         <input type="hidden" id="node-input-height">
         <button class="editor-button" id="node-input-size"></button>
     </div>
     <div class="form-row">
-        <label for="node-input-example"><i class="fa fa-hand"></i> Example</label>
-        <input type="text" id="node-input-example">
+        <label for="node-input-src"><i class="fa fa-hand"></i> <span data-i18n="ui-iframe.label.src"></label>
+        <input type="text" id="node-input-src">
     </div>
 </script>
