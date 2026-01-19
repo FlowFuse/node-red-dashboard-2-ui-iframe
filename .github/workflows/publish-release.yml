@@ -23,6 +23,6 @@ jobs:
       - name: Build
         run: npm run build
       - name: Publish package to public npm registry
-        uses: JS-DevTools/npm-publish@8f08ec0dafe29acea4e9efe18e67ebde86904ad1 # v4.1.2
+        uses: JS-DevTools/npm-publish@4ce4bd0f334d5316473155078da1955d42148494 # v4.1.4
         with:
           token: ${{ secrets.NPM_PUBLISH_TOKEN }}
